@@ -65,7 +65,7 @@ wsServer.on('request', function(request) {
 app.get('/server/', function (req, res) {
 
 	var respondWithData = function(code, output) {
-		if (code === 0) res.send(output.toString())
+		if (code === 0) res.send(JSON.stringify(output))
 		else res.sendStatus(500)
 	}
 
