@@ -8,9 +8,6 @@ var ws      = require('websocket').server
 var args    = require('yargs').argv
 var port    = args.port || process.env.LINUX_DASH_SERVER_PORT || 80
 
-server.listen(port, function() {
-  console.log('Linux Dash Server Started on port ' + port + '!');
-})
 
 app.use(express.static(path.resolve(__dirname + '/../')))
 
@@ -74,3 +71,5 @@ app.get('/server/', function (req, res) {
 
   getPluginData(req.query.module, respondWithData)
 })
+
+module.exports = app
